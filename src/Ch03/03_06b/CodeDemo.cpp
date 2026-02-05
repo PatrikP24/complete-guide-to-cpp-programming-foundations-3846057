@@ -4,13 +4,20 @@
 
 #include <iostream>
 #include <cstdint>
+#define MAX_AMMO 500
+//#define DEBUG
 
 int main(){
-    int32_t ammo = 100;
+    int32_t ammo = MAX_AMMO /5;
     uint8_t health_items = 5;
 
     ammo += 200; // Player finds extra ammo
     health_items -= 2; // Player uses some health items
+
+#ifdef DEBUG
+    std::cout << "[DEBUG] ikkuna: "  << std::endl;
+#endif
+
 
     std::cout << "Final Ammo: " << ammo << std::endl;
     std::cout << "Remaining Health Items: " << (int) health_items << std::endl;
